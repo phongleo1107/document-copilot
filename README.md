@@ -29,7 +29,9 @@ document-copilot/
 ├── README.md           # this file
 ├── data/               # local corpus + download script (payloads gitignored)
 ├── docs/
-│   └── client-brief.md # the client one-pager
+│   ├── client-brief.md # the client one-pager
+│   ├── architecture.md # target architecture
+│   └── todos.md        # build checklist (start here)
 ├── backend/            # FastAPI service
 └── frontend/           # React SPA (Vite)
 ```
