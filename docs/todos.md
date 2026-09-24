@@ -47,18 +47,18 @@ Goal: both services boot, config is fail-fast single-source, no product code yet
 
 Setup, once:
 
-- [ ] Create the Supabase project and collect URL / anon key / service_role key / direct DB
+- [x] Create the Supabase project and collect URL / anon key / service_role key / direct DB
       URL — [guides/supabase-setup.md](guides/supabase-setup.md)
-- [ ] Create an OpenAI API key
-- [ ] `backend/.env` written from `backend/.env.example` (gitignored, never committed)
-- [ ] `frontend/.env` written from `frontend/.env.example` (public values only)
+- [x] Create an OpenAI API key
+- [x] `backend/.env` written from `backend/.env.example` (gitignored, never committed)
+- [x] `frontend/.env` written from `frontend/.env.example` (public values only)
 
 Backend:
 
-- [ ] `cd backend && uv sync`
-- [ ] `uv add fastapi uvicorn pydantic pydantic-settings httpx structlog openai supabase pydantic-ai sqlalchemy alembic "psycopg[binary]" pgvector`
-- [ ] `uv add --dev pytest ruff`
-- [ ] Add `[build-system]` + `[tool.hatch.build.targets.wheel]` so `app/` installs editable
+- [x] `cd backend && uv sync`
+- [x] `uv add fastapi uvicorn pydantic pydantic-settings httpx structlog openai supabase pydantic-ai sqlalchemy alembic "psycopg[binary]" pgvector`
+- [x] `uv add --dev pytest ruff`
+- [x] Add `[build-system]` + `[tool.hatch.build.targets.wheel]` so `app/` installs editable
       and `from app...` imports resolve everywhere — see [guides/backend-setup.md](guides/backend-setup.md)
 - [ ] `app/config.py` — pydantic-settings, every var from `.env.example`, fails fast when a
       required value is missing (no silent fallbacks)

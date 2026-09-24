@@ -2,8 +2,35 @@
 name = "document-copilot-backend"
 version = "0.1.0"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "alembic==1.20.0",
+    "fastapi==0.141.1",
+    "httpx==0.28.1",
+    "openai==3.14.1",
+    "pgvector==0.5.0",
+    "psycopg[binary]==3.3.5",
+    "pydantic==2.13.5",
+    "pydantic-ai==2.44.0",
+    "pydantic-settings==2.15.0",
+    "sqlalchemy==2.0.54",
+    "structlog==26.1.0",
+    "supabase==2.31.0",
+    "uvicorn==0.53.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [tool.uv]
 add-bounds = "exact"
 exclude-newer = "7 days"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[dependency-groups]
+dev = [
+    "pytest==9.1.1",
+    "ruff==0.16.8",
+]
